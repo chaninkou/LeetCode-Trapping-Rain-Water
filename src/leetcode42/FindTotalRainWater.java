@@ -5,6 +5,7 @@ public class FindTotalRainWater {
         int left = 0;
         int right = height.length - 1;
         
+        // Tallest block so far
         int maxLeft = 0;
         int maxRight = 0;
         
@@ -12,12 +13,13 @@ public class FindTotalRainWater {
         
         // 1, 0, 1 = 1
         // 2, 0, 2 = 2
+        // 2, 1, 0, 1, 2 = 4
         while(left < right){
             if(height[left] <= height[right]){
                 if(height[left] >= maxLeft){
                     maxLeft = height[left];
                 } else {
-                    result += (maxLeft - height[left]);     
+                    result += (maxLeft - height[left]); // Only smaller block could hold water 
                 }
                 
                 left++;
@@ -25,7 +27,7 @@ public class FindTotalRainWater {
                 if(height[right] >= maxRight){
                     maxRight = height[right];
                 } else {
-                    result += (maxRight - height[right]);    
+                    result += (maxRight - height[right]); // Only smaller block could hold water    
                 }
                 
                 right--;

@@ -11,7 +11,5 @@ public class Main {
 		FindTotalRainWater solution = new FindTotalRainWater();
 		
 		System.out.println("Solution: " + solution.trap(height));
-				
-	
 	}
 }
